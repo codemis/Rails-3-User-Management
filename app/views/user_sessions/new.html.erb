@@ -1,0 +1,12 @@
+<section class="form join">
+  <h1>login</h1>
+  <section>
+    <%= semantic_form_for @user_session, :as => :user_session, :url => auth_login_path do |f| %>
+    <ol>
+      <li><%= f.input :login, :label => 'email' %></li>
+      <li><%= f.input :password, :label => 'password' %></li>
+    </ol>
+    <button type="submit">login</button>
+    <% end %>
+  </section>
+</section>

@@ -1,0 +1,156 @@
+nav#main_nav{
+  clear: both;
+  margin-bottom: 20px;
+  width: 100%;
+}
+nav#main_nav ul{
+  display: block;
+}
+nav#main_nav ul li{
+  float: left;
+  padding: 5px;
+}
+.clear{
+  display: block;
+  clear: both;
+}
+/*Table Layout*/
+table{
+  width: 100%;
+  border-style: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th{
+  background-color: #B1B2A7;
+  color: #ffffff;
+}
+th a{
+  color: #ffffff;
+  text-decoration: none;
+}
+th a:hover{
+  text-decoration: underline;
+}
+tr.even{
+  background-color: #EEEFE1;
+}
+/*Header Layout*/
+h1{
+  color: #535353;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+#error_messages h2{
+  color: red;
+  font-size: 14px;
+  font-style: italic;
+}
+/*Form Layout*/
+
+form.formtastic>ol {
+	margin-bottom: 25px;
+}
+
+form.formtastic li {
+	margin-bottom: 10px;
+}
+
+form.formtastic li p.inline-errors {
+	font-size: 11px;
+	color: #ff762b;
+	font-style: italic;
+}
+
+form.formtastic li.radio li {
+	margin-bottom: 0;
+}
+
+form.formtastic li>label>abbr {
+	color: #ff762b;
+}
+
+form.formtastic #error-messages {
+	padding: 15px;
+	background-color: #ff762b;
+	margin-bottom: 15px;
+	display: inline-block;
+}
+
+form.formtastic #error-messages>h1 {
+	font-size: 12px;
+	color: #feffff;
+}
+
+form.formtastic li.file {
+}
+
+form.formtastic li.file input {
+	background-color: #f1f2ef;
+	border: 3px solid #ecedeb;
+	padding: 5px;
+	width: 300px;
+}
+
+form.formtastic li.field-caption {
+	font-size: 9px;
+	margin-top: -7px;
+	color: #b1b2a7;
+}
+
+form.formtastic #error-messages>ul.errors {
+	list-style-type: disc;
+	margin-top: 10px;
+	margin-left: 25px;
+}
+
+form.formtastic #error-messages>ul.errors>li {
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+
+form label {
+	display: block;
+	font-size: 13px;
+	text-transform: capitalize;
+	color: #757573;
+	margin-bottom: 2px;
+}
+
+form legend.label label {
+	margin-bottom: -6px;
+	display: inline-block;
+}
+
+form input[type=text], form input[type=password] {
+	padding: 5px;
+	font-size: 15px;
+	background-color: #f1f2ef;
+	border: 3px solid #ecedeb;
+	color: #8f8f8c;
+}
+
+form section.current-file {
+	margin-bottom: 10px;
+}
+
+form section.current-file>header h1 {
+	margin-bottom: -10px;
+	font-size: 13px;
+}
+
+form section.current-file>aside {
+	background-color: #f1f2ef;
+	padding: 5px;
+	display: inline-block;
+	border: 3px solid #ecedeb;
+}
+
+form section.current-file>aside li {
+	margin-bottom: 0;
+}
+
+form section.current-file>aside li>a {
+	font-size: 13px;
+	text-decoration: underline;
+}

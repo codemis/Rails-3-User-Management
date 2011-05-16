@@ -1,0 +1,13 @@
+<li><%= f.input :first_name, :label => "first name" %></li>
+<li><%= f.input :last_name, :label => "last name" %></li>
+<li><%= f.input :email, :label => "email" %></li>
+<li><%= f.input :password, :label => "password" %></li>
+<li><%= f.input :password_confirmation, :label => "confirm password" %></li>
+<% if permitted_to? :update, :roles %>
+  <li><%= f.semantic_fields_for :role do |role| %>
+    <ol>
+      <li><%= role.input :title, :label => "role", :collection => User::ROLES, :as => :radio %></li>
+    </ol>
+    <% end %>
+  </li>
+<% end %>

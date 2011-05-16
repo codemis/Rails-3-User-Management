@@ -1,0 +1,39 @@
+<h1>Users</h1>
+<% if permitted_to? :create, :users %>
+  <nav>
+    <ul>
+      <li><%= link_to "add a user", new_user_path %></li>
+    </ul>
+  </nav>
+<% end %>
+<section>
+  <table class="users">
+    <thead>
+      <tr>
+        <th><%= sortable "login", "username" %></th>
+        <th><%= sortable "first_name", "name" %></th>
+        <th><%= sortable "email" %></th>
+        <th><%= sortable "last_login_at", "logged in last" %></th>
+        <th>actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr id="user_<%= user.id %>" class="<%= stripe %>">
+          <td><%= user.login %></td>
+          <td><%= user.full_name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.login_date %></td>
+          <td class="actions">
+            <% if permitted_to? :edit, user %>
+              <%= link_to " edit ", edit_user_path(user) %>
+            <% end %>
+            <% if permitted_to? :delete, user %>
+              <%= link_to " delete ", user_path(user), :method => :delete, :confirm => "are you sure?" %> 
+            <% end %> 
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

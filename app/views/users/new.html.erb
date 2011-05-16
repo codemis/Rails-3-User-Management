@@ -1,0 +1,13 @@
+<section class="form">
+  <h1>add a user</h1>
+  <section>
+    <%= semantic_form_for @user do |f| %>
+      <%= f_error_messages(f) %>
+      <ol>
+        <%= render :partial => 'form', :locals => {:f => f} %>
+        <li><%= f.input :send_email, :label => "send user account email", :as => :boolean %></li>
+      </ol>
+      <button type="submit">save</button> <span>or <%= link_to "cancel", users_path %></span>
+    <% end %>
+  </section>
+</section>

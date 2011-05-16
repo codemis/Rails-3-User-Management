@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Content Submmission</title>
+    <%= stylesheet_link_tag "reset", "main" %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <nav id="main_nav">
+      <ul>
+      <% if current_user %>
+        <li>Welcome <%= current_user.full_name %> > </li>
+        <% if permitted_to? :manage, :users %>
+          <li><%= link_to "manage users", users_path %></li>
+        <% end %>
+        <li><%= link_to "my account", edit_user_path(current_user) %></li>
+        <li><%= link_to "logout", logout_path %></li>
+      <% else %>
+        <li><%= link_to "login", login_path %></li>
+      <% end %>
+      </ul>
+      <div class="clear"></div>
+    </nav>
+    <% if flash[:notice].present? %>
+      <div id="flash_notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

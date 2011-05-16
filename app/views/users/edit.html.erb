@@ -1,0 +1,15 @@
+<section class="form edit">
+  <h1>edit user</h1>
+  <section>
+    <%= semantic_form_for @user do |f| %>
+      <%= f_error_messages(f) %>
+      <ol>
+        <%= render :partial => 'form', :locals => {:f => f} %>
+      </ol>
+      <button type="submit">update</button> 
+      <% if permitted_to? :manage, :users %>
+        <span>or <%= link_to "cancel", users_path %></span>
+      <% end %>
+    <% end %>
+  </section>
+</section>
