@@ -1,0 +1,13 @@
+<section class="form">
+  <h1>reset my password</h1>
+  <section>
+    <%= semantic_form_for @user, :url => forgot_password_path(@user.perishable_token), :method => :post do |f| %>
+      <%= f_error_messages(f) %>
+      <ol>
+        <li><%= f.input :password, :as => :password, :label => "new password" %></li>
+        <li><%= f.input :password_confirmation, :as => :password, :label => "confirm password" %></li>
+      </ol>
+      <button type="submit">save new password</button> <span>or <%= link_to "cancel", login_path %></span>
+    <% end %>
+  </section>
+</section>

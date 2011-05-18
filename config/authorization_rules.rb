@@ -4,6 +4,7 @@ authorization do
   
   role :guest do
     has_permission_on :user_sessions, :to => [:create, :delete]
+    has_permission_on :forgot_password, :to => [:create, :update]
   end
   
   role :member do

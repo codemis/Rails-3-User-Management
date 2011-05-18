@@ -19,12 +19,15 @@ class User < ActiveRecord::Base
   # attributes
   #
   accepts_nested_attributes_for :role
-  attr_accessor :send_email
+  attr_accessor :send_email, :validate_password
   
   # validates
   #
   validates :first_name, :last_name, :email, :presence => true
   validates :role, :presence => true
+  validates :password, :presence => true, :on => :update, :if => proc { |u|
+    u.validate_password === true
+  }
   
   # methods
   #
@@ -69,6 +72,14 @@ class User < ActiveRecord::Base
   #
   def last_administrator?
     Role.count(:conditions => ["title = 'administrator' AND user_id != ?", self.id]) < 1
+  end
+  
+  def reset_password
+    reset_perishable_token!
+  end
+
+  def deliver_reset_password_email
+    UserMailer.reset_password_email(self).deliver
   end
   
   private

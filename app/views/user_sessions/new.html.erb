@@ -6,7 +6,7 @@
       <li><%= f.input :login, :label => 'email' %></li>
       <li><%= f.input :password, :label => 'password' %></li>
     </ol>
-    <button type="submit">login</button>
+    <button type="submit">login</button><span>or <%= link_to "forgot my password", new_forgot_password_path %></span>
     <% end %>
   </section>
 </section>

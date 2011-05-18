@@ -1,0 +1,15 @@
+<section class="form">
+  <h1>add a user</h1>
+  <section>
+    <%= semantic_form_for :user, :url => forgot_password_index_path, :method => :post do |f| %>
+      <% unless flash[:error].blank? %>
+        <h2>An error prohibited us from retrieving your login information</h2>
+       <div><%= flash[:error] %></div>
+      <% end %>
+      <ol>
+        <li><%= f.input :email, :label => "email" %></li>
+      </ol>
+      <button type="submit">request reset</button> <span>or <%= link_to "cancel", login_path %></span>
+    <% end %>
+  </section>
+</section>

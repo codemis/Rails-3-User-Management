@@ -12,6 +12,12 @@ module NavigationHelpers
       '/'
     when /the dashboard\s?page/
       dashboard_path
+    when /edit forgot password page/
+      edit_forgot_password_path
+    when /new forgot password page/
+      new_forgot_password_path
+    when /forgot password page/
+      forgot_password_index_path
 
     # the following are examples using path_to_pickle
 
