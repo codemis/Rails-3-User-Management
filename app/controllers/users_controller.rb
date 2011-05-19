@@ -43,13 +43,14 @@ class UsersController < ApplicationController
   #
   def update
     if @user.update_attributes params[:user]
-      if @user.administrator?
+      if @user.id == current_user.id
+        flash[:notice] = "Your account was successfully updated."
+      else
         flash[:notice] = "#{@user.full_name} account was successfully updated."
+      end
+      if current_user.administrator?
         redirect_to users_path
       else
-        # They are only allowed to edit their account
-        #
-        flash[:notice] = "Your account was successfully updated."
         redirect_to dashboard_path
       end
     else
