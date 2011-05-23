@@ -1,4 +1,4 @@
-ContentSubmmission::Application.routes.draw do
+UserManager::Application.routes.draw do
   resources :users
   resources :forgot, :controller => "forgot_password", :as => :forgot_password
   match "/dashboard",  :to => "dashboard#index",     :as => :dashboard,      :via => :get
