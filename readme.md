@@ -1,7 +1,7 @@
 Making Life Easier
 ==================
 
-  In order to make it easier to develop a Rails application,  I am making this code available for any of your application needs.  It is a basic User authentication, and management system using the following Gems:
+  In order to make it easier to develop a Rails application,  I am making this code available for any of your application needs.  It is a basic user authentication, and management system using the following Gems:
   
   * Rails 3.0.7
   * Authlogic
