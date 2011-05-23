@@ -6,6 +6,9 @@ Making Life Easier
   * Rails 3.0.7
   * Authlogic
   * Declarative Authorization
+  * Testing
+    - All models have Rspec testing
+    - Cucumber Integration testing
 
   The system provides the ability to add, delete, and edit current users,  Add roles for each specific user, and declare permission for those roles.  It also has "Forgot Password" functionality, and login and log out functionality.  Hope you enjoy it.  If you would like to know more about The tools used for this project,  check out the following screencasts.
   
